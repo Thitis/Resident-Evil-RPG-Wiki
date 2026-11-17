@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Evil TTRPG - Wiki</title>
+    <!-- Tailwind CSS para estilização rápida e moderna -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="flex h-screen overflow-hidden">
+
+    <!-- SIDEBAR DE NAVEGAÇÃO -->
+    <aside class="w-80 bg-gray-950 border-r border-gray-800 flex flex-col shrink-0">
+        <!-- Cabeçalho do Sistema -->
+        <div class="p-4 border-b border-gray-800 bg-gray-900/50 flex items-center justify-between">
+            <div>
+                <span class="text-xs font-mono-custom text-red-500 uppercase tracking-widest block">U.S.C. / CLASSIFIED</span>
+                <h1 class="text-lg font-bold text-white font-mono-custom tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-biohazard text-red-600 animate-pulse"></i> UMBRELLA-NET // WIKI
+                </h1>
+            </div>
+        </div>
+
+        <!-- Barra de Busca Rápida -->
+        <div class="p-3 border-b border-gray-800">
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-500 text-sm"></i>
+                <input type="text" id="searchInput" placeholder="Pesquisar tópico, item, inimigo..." 
+                    class="w-full bg-gray-900 text-sm text-gray-200 pl-9 pr-4 py-2 rounded border border-gray-800 focus:outline-none focus:border-red-600 transition-colors">
+            </div>
+        </div>
+
+        <!-- Lista de Categorias e Tópicos -->
+        <div id="categoryList" class="flex-1 overflow-y-auto p-3 space-y-4">
+            <!-- Preenchido via JavaScript -->
+        </div>
+
+        <!-- Rodapé Sidebar -->
+        <div class="p-3 border-t border-gray-800 bg-gray-900/30 text-xs text-gray-500 flex justify-between items-center font-mono-custom">
+            <span>SEC-DATA: ONLINE</span>
+            <span class="text-red-500">REV. 2026.11</span>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="flex-1 flex flex-col h-screen overflow-hidden bg-[#090d10]">
+        <!-- Topbar do Conteúdo -->
+        <header class="h-14 border-b border-gray-800 bg-gray-950/80 backdrop-blur px-6 flex items-center justify-between shrink-0">
+            <div id="breadcrumb" class="text-sm font-mono-custom text-gray-400 flex items-center gap-2">
+                <span class="text-red-500">ROOT</span> / <span id="currentCategoryTitle" class="text-gray-300">Selecione um tópico</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-mono-custom font-medium bg-red-950 text-red-400 border border-red-900/50">
+                    <i class="fa-solid fa-lock mr-1.5 text-[10px]"></i> Nível 4 Clearance
+                </span>
+            </div>
+        </header>
+
+        <!-- Visualizador de Páginas -->
+        <div id="contentViewer" class="flex-1 overflow-y-auto p-8 max-w-5xl mx-auto w-full">
+            <!-- Estado Inicial / Vazio -->
+            <div id="welcomeState" class="h-full flex flex-col items-center justify-center text-center">
+                <div class="w-16 h-16 rounded-full bg-red-950/40 border border-red-900/50 flex items-center justify-center text-red-500 text-2xl mb-4">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <h2 class="text-xl font-bold text-white font-mono-custom mb-2">TERMINAL DE ACESSO À BASE DE DADOS</h2>
+                <p class="text-sm text-gray-400 max-w-md">Escolha um tópico no menu lateral esquerdo ou utilize a barra de pesquisa para consultar os arquivos do sistema.</p>
+            </div>
+
+            <!-- Artigo Carregado Dinamicamente -->
+            <article id="articleContainer" class="hidden space-y-6">
+                <div class="border-b border-gray-800 pb-4">
+                    <div class="flex items-center gap-2 text-xs font-mono-custom text-red-500 mb-1" id="articleCategory">CATEGORIA</div>
+                    <h2 class="text-3xl font-bold text-white tracking-tight font-mono-custom" id="articleTitle">Título do Tópico</h2>
+                </div>
+                <div id="articleBody" class="prose prose-invert max-w-none text-gray-300 space-y-4 text-sm leading-relaxed">
+                    <!-- Conteúdo HTML do artigo -->
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- SCRIPT DE GERENCIAMENTO DA WIKI -->
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
