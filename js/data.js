@@ -326,13 +326,8 @@ export const wikiData = [
                     </p>
 
                     <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">MODIFICADORES DE EFEITO?</h3>
-                    <p>Cabeça – dificuldade alta; dano maior e chance de
-                    incapacitar
-                    Corpo – dificuldade comum; dano direto
-                    Braços – dificuldade média; pode limitar uso de
-                    armas
-                    Pernas – dificuldade média; reduz movimento em
-                    uma categoria e pode derrubar
+                    <p>
+                    Abaixo esta listado as partes do corpo e como afetam na hora de atacar.
                     </P>
 
                     <div class="re-tabela-container">
