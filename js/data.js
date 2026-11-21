@@ -218,12 +218,17 @@ export const wikiData = [
                     Porém, ele deve informar que a dificuldade é secreta antes do jogador realizar a rolagem e caso o jogador falhe
                     no teste, o jogador recebe 1 ponto de trama como compensação por ter falhado sem saber a dificuldade do teste.
 
+                    <p> Efeito Coleral. Quando o resultado de um teste tem seu valor sendo maior ou igual a 4 + DT, isso significa que
+                    é muito bem sucedido e algo a mais acontece por consequência, certas mecânicas que exigem um teste podem descrever,
+                    que ela possui um efeito colateral, ou seja que caso algo a mais aconteça caso você atinja o valor necessário para
+                    o efeito colateral.
+
                     <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">ROLAGENS EFECICIENTES E INEFECICIENTES</h3>
 
                     <p> Rolagens Ineficientes: Quando uma rolagem é ineficiente, significa que caso caia no resultado 1 ou 2, o resultado
                     é uma falha crítica.
 
-                    <p> Rolagens Eficientes: Quando uma roalgem é eficientes, significa que caso  o valor de um dado caia em um resultado de 1
+                    <p> Rolagens Eficientes: Quando uma rolagem é eficientes, significa que caso  o valor de um dado caia em um resultado de 1
                     numero menor que o valor máximo ele conta como um sucesso Evolutivo.
 
                     <p> Anulando Efeitos: Caso o o teste de um personagem possua efeitos que tornem a rolagem eficiente e 
@@ -240,7 +245,7 @@ export const wikiData = [
                     
                     <ul>
                     <li>Rerolar um dado do teste.</li>
-                    <li>Aumentar o limite de dados extras em 1.</li>
+                    <li>Caso o teste tenha sido bem sucedido adicionar 1d4 extra a rolagem</li>
                     <li>Tornar o teste eficiente.</li>
                     </ul>
                     </p>
@@ -263,17 +268,125 @@ export const wikiData = [
                 content: `
                     <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">REGRAS DE CENAS</h3>
                     
-                `
-            },
-            {//Ações Básicas
+                    <p>
+                    O jogo é estruturado em cenas, que representam unidades de tempo e
+                    narrativa onde ações relevantes acontecem. Uma cena é um recorte da
+                    história em que os personagens estão envolvidos em uma situação
+                    específica, com começo, desenvolvimento e possível desfecho.
+
+                    </p> 
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">O QUE É UMA CENA?</h3>
+                    
+                    <p>
+                    Uma cena pode representar:
+                    um combate contra criaturas
+                    exploração de um ambiente (delegacia,
+                    laboratório, cidade, etc.),
+                    interação social com NPCs,
+                    momentos de tensão ou investigação.
+                    Ela dura o tempo necessário para que aquela situação
+                    se resolva ou evolua.
+
+                    </p>
+
+                    
+                `   
+                    
+            },{//Sistema de Corpo
+                id: "sistema-de-corpo",
+                title: "Sistema de Corpo",
+                content: `
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Sistema de Corpo</h3>
+                    <p>
+                    O sistema de corpo serve para definir quais partes de um inimigo podem ser atingidas,
+                    o quão dificil ou não é de ataca-las e possivelmente o que acontece ao acertalas.
+                    Por padrão todo personagem de jogador possui 4 partes: Torso, Cabeça, Braços e Pernas.
+                    (Certas características, vantagens ou desvantagens podem alterar este padrão)
+
+                    <p>
+                   <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Mirando Partes do Corpo</h3> 
+                    Quando o inimigo tem partes do corpo bem
+                    definidas, o atacante pode escolher onde acertar.
+
+                    <p> 
+                    Membros Ocultos. Certos personagens podem possuir certas partes do corpo que não são imediatamente
+                    vísiveis ou podem ser reveladas após uma certa condição seja atingida para isso.
+                    
+                    <p>
+                    
+                    Durante um ataque deve ser seguido as seguintes etapas de regras:
+                    <ul>
+                    <li>o atacante deve escolher uma parte do corpo para atacar(ele deve ter ciência desta parte do corpo para poder escolher ela)</li>
+                    <li>o mestre aplica um ajuste de dificuldade de acordo com a parte do corpor escolhida</li>
+                    <li>o ataque segue normalmente</li>
+                    </ul>
+                    Caso não seja declarado uma parte para ser mirada do corpo, então deve ser considerado que o ataque
+                    estava mirando na parte principal do corpo.(sendo na maioria dos casos o torso, principalmente em criaturas humanóides)
+
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">MODIFICADORES DE EFEITO?</h3>
+                    <p>Cabeça – dificuldade alta; dano maior e chance de
+                    incapacitar
+                    Corpo – dificuldade comum; dano direto
+                    Braços – dificuldade média; pode limitar uso de
+                    armas
+                    Pernas – dificuldade média; reduz movimento em
+                    uma categoria e pode derrubar
+                    </P>
+
+                    <div class="re-tabela-container">
+                    <table class="re-tabela">
+                        <thead>
+                        <tr>
+                            <th scope="col">Parte do Corpo</th>
+                            <th scope="col">Modificador</th>
+                            <th scope="col">Efeito Extra</th>
+                            <th scope="col">Efeito Colateral</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="re-id">Cabeça</td>
+                            <td><strong>-5</td>
+                            <td>A criatura recebe 2 graus de atordoado e 1 de desorientado</td>
+                            <td>Role todos os dados de dano novamente e adicione ao dano total</td>
+ 
+                        </tr>
+                        <tr>
+                            <td class="re-id">Torso</td>
+                            <td><strong>0</td>
+                            <td>Nenhum</td>
+                            <td>Recebe 1 grau de impedido</td>
+  
+                        </tr>
+                        <tr>
+                            <td class="re-id">Braços</td>
+                            <td><strong>-2</td>
+                            <td>Ataque da criatura sofrem uma penalidade de -2</td>
+                            <td>Ataques da criatura até o final da rodada são ineficientes</td>
+
+                        </tr>
+                        <tr>
+                            <td class="re-id">Pernas</td>
+                            <td><strong>-1</strong></td>
+                            <td>A criatura recebe 2 graus de impedido</td>
+                            <td>A criatura recebe a condição caído e recebe um ferimento</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    
+                `   
+                    
+            },{//Ações Básicas
                 id: "pontos de trama",
                 title: "Pontos de Trama",
                 content: `
                     <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">PONTOS DE TRAMA</h3>
 
-                    <p>
-                    Descrição aqui
-                    </p>
+                    
 
                 `
             },
@@ -433,7 +546,37 @@ export const wikiData = [
         id: "regras-avançadas",
         name: "Regras Avançadas",
         icon: "fa-book",
-        topics: []
+        topics: [
+                {//Condições
+                id: "condições",
+                title: "Condições",
+                content: `
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Regras de Condições</h3>
+
+                    <p> As condições são 
+
+                `
+            },{//Condições
+                id: "condições-de-terreno",
+                title: "Condições de Terreno",
+                content: `
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Regras de Condições</h3>
+
+                    <p> As condições são 
+
+                `
+            },{//Condições
+                id: "Escondendo-se",
+                title: "Escondendo-se",
+                content: `
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Regras de Condições</h3>
+
+                    <p> As condições são 
+
+                `
+            }
+
+        ]
     },{//Categoria de Criação de Personagem
         id: "criação-de-personagem",
         name: "Criação de Personagem",
@@ -514,30 +657,154 @@ export const wikiData = [
                     </p>
                 `
             },{
-                id: "atributos",
-                title: "Atributos",
+                id: "atributos-e-sub-atributos",
+                title: "Atributos e Sub-atributos",
                 content: `
                     <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Atributos</h3>
+                    <p> Os atributos representam as capacidades
+                        fundamentais dos personagens e são utilizados
+                        para resolver praticamente todas as ações no
+                        jogo.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">AGilidade</h3>
+                    <p> Representa velocidade, reflexos e coordenação motora.
+                        Usos comuns:
+                        Esquiva de ataques,
+                        Fuga,
+                        Controle de armas automáticas,
+                        Evitar explosões e efeitos em área.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Força</h3>
+                    <p>Representa poder físico e resistência corporal.
+                    Usos comuns:
+                    Combate corpo a corpo,
+                    Uso de armas pesadas,
+                    Empurrar ou derrubar inimigos,
+                    Resistência a danos físicos.
+                    </P>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Precisão</h3>
+                    <p>Representa coordenação fina e habilidade de mira.
+                    Usos comuns:
+                    Ataques,
+                    Disparos à distância,
+                    Acertos em pontos específicos (como headshots),
+                    Movimentação Cuidadosa.
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Mente</h3>
+                    <p>Representa raciocínio lógico e percepção.
+                    Usos comuns:
+                    Resolver enigmas,
+                    Detectar ameaças,
+                    Analisar situações complexas,
+                    Resistir a efeitos mentais.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Vontade</h3>
+                    <p>
+                    Representa resistência psicológica e controle emocional.
+                    Usos comuns:
+                    Suportar dor física e emocional,
+                    Resistir a infecções,
+                    Determinação do personagem,
+                    Resistir a efeitos mentais.
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Medicina</h3>
+                    <p>
+                    Representa conhecimento médico e capacidade de
+                    tratamento.
+                    Usos comuns:
+                    Curar aliados,
+                    Tratar ferimentos,
+                    Reduzir efeitos de infecção.
+
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Furtividade</h3>
+                    <p>
+                    Representa habilidade de se mover sem ser detectado.
+                    Usos comuns:
+                    Evitar combate
+                    Realizar ataques furtivos
+                    Se esconder ou escapar
+                    </P>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Conhecimento</h3>
+                    <p>
+                    Representa educação técnica e científica.
+                    Usos comuns:
+                    Entender vírus e experimentos
+                    Operar sistemas
+                    Criar ou modificar itens
+                    Descobrir/Lembrar um informação importante
+                    </p>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Vigiliância</h3>
+                    <p>
+                    Representa percepção, atenção e prontidão.
+                    Vigilância mede a capacidade de notar perigos, perceber
+                    ameaças e reagir rapidamente ao que acontece ao redor.
+                    Usos comuns:
+                    • perceber emboscadas
+                    • notar sons e rastros
+                    • detectar armadilhas
+                    • agir diante de surpresas
+                    • observar movimentos suspeitos
+                    <p>
+
+                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Carisma</h3>
+                    <p>
+                    Representa presença, influência e força de personalidade.
+                    Carisma mede a capacidade de convencer, liderar,
+                    intimidar e influenciar outras pessoas, mesmo em
+                    situações de alta pressão.
+                    Usos comuns:
+                    • convencer ou enganar
+                    • intimidar ou negociar
+                    • liderar aliados
+                    • inspirar confiança
+                    • manipular decisões
+                    <p>
+
+
                 `
             },{
-                id: "vantagens",
-                title: "Vantagens",
+                id: "vantagens-e-desvantagens",
+                title: "Vantagens e Desvantagens",
                 content: `
                     <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Vantagens</h3>
 
                     <p> As vantagens 
                 `
-            },{
-                id: "desvantagens",
-                title: "Desvantagens",
-                content: `
-                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Desvantagens</h3>
-                `
-            },{
-                id: "características",
+            },{//Características
+                id: "caracteristicas",
                 title: "Características",
                 content: `
-                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Características</h3>
+                    <div class="space-y-6" id="characteristics-page-container">
+
+                        <div>
+                            <h3 class="text-xl font-bold text-red-500 tracking-wide uppercase">Lista de Características</h3>
+                            <p class="text-zinc-400 text-sm mt-1">Consulte as habilidades, talentos e progressões de nível disponíveis para os personagens.</p>
+                        </div>
+
+                        <!-- Barra de Pesquisa -->
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="search-characteristics" 
+                                placeholder="Pesquisar característica por nome ou pré-requisito..." 
+                                class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 pl-10 text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-red-500 transition-colors shadow-inner text-sm"
+                            >
+                            <svg class="w-5 h-5 text-zinc-500 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+
+                        <!-- Grade de Cards (até 4 colunas em telas grandes) -->
+                        <div id="characteristics-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                    </div>
                 `
             }
         ]
@@ -546,23 +813,6 @@ export const wikiData = [
         name: "Equipamentos e Itens",
         icon: "fa-book",
         topics: []
-    },{//Condições
-        id: "condições",
-        name: "condições",
-        icon: "fa-book",
-        topics: [
-                {//Condições
-                id: "regras de condições",
-                title: "Regras de Condições",
-                content: `
-                    <h3 class="text-lg font-semibold text-white mt-4 font-mono-custom">Regras de Condições</h3>
-
-                    <p> As condições são 
-
-                `
-            }
-            
-        ]
     },{//Agentes e B.O.W    
         id: "agentes-bows",
         name: "Agentes e B.O.Ws",

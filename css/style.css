@@ -25,3 +25,131 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #dc2626;
 }
+
+/* Estilo da caixa vermelha para o nome da característica */
+.char-title-box {
+    border: 1px solid rgba(220, 38, 38, 0.7); /* Borda vermelha */
+    background-color: rgba(127, 29, 29, 0.3); /* Fundo avermelhado escuro */
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+/* Tabelas */
+
+/* Tabelas */
+.re-tabela-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #111827;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+    margin-bottom: 1rem;
+}
+
+.re-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: #d1d5db;
+}
+
+/* Cabeçalho alinhado ao estilo .char-title-box */
+.re-tabela thead {
+    background-color: rgba(127, 29, 29, 0.3);
+    border-bottom: 1px solid rgba(220, 38, 38, 0.7);
+}
+
+.re-tabela th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f87171;
+    border-right: 1px solid rgba(55, 65, 81, 0.6);
+}
+
+.re-tabela th:last-child {
+    border-right: none;
+}
+
+/* Células */
+.re-tabela td {
+    padding: 0.7rem 1rem;
+    background-color: #0b0f12;
+    border-bottom: 1px solid #1f2937;
+    border-right: 1px solid rgba(31, 41, 55, 0.7);
+    vertical-align: middle;
+}
+
+.re-tabela td:last-child {
+    border-right: none;
+}
+
+.re-tabela tbody tr:nth-child(even) td {
+    background-color: #0f1419;
+}
+
+/* Hover com destaque vermelho */
+.re-tabela tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.re-tabela tbody tr:hover td {
+    background-color: rgba(127, 29, 29, 0.18);
+    box-shadow: inset 3px 0 0 #dc2626;
+}
+
+.re-tabela tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* IDs e códigos monoespaçados */
+.re-id {
+    font-family: 'Share Tech Mono', monospace;
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+/* Badges de status */
+.status {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    border-radius: 0.25rem;
+    border: 1px solid currentColor;
+}
+
+.status-fine {
+    color: #34d399;
+    background-color: rgba(6, 78, 59, 0.25);
+}
+
+.status-caution {
+    color: #fbbf24;
+    background-color: rgba(120, 53, 15, 0.25);
+}
+
+.status-danger {
+    color: #f87171;
+    background-color: rgba(127, 29, 29, 0.35);
+    border-color: rgba(220, 38, 38, 0.7);
+    animation: pulso-alerta 1.6s infinite;
+}
+
+@keyframes pulso-alerta {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.55;
+    }
+}

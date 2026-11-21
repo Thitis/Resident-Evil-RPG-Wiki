@@ -1,4 +1,6 @@
 import { wikiData } from "./data.js";
+// 1. Importe a função do seu arquivo characteristics.js criado anteriormente
+import { initCharacteristicsModule } from './modules/characteristics.js';
 
 export function renderMenu(filter = "") {
     const categoryListEl = document.getElementById("categoryList");
@@ -70,4 +72,10 @@ export function loadTopic(categoryName, topic) {
     articleBodyEl.innerHTML = topic.content;
     currentCategoryTitleEl.textContent = `${categoryName} / ${topic.title}`;
     contentViewerEl.scrollTop = 0;
+
+    // 2. ADICIONE ESTE BLOCO ABAIXO:
+    // Se o usuário clicou no tópico de características, inicializa a grade e a busca interativa
+    if (topic.id === "caracteristicas") {
+        initCharacteristicsModule("characteristics-page-container");
+    }
 }
